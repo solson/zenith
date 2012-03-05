@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'zenith/lexer'
+require 'ripl'
+
+Ripl.start
