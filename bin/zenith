@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 require 'zenith/lexer'
-require 'ripl'
 
-Ripl.start
+text = File.read(ARGV[0])
+
+begin
+  p Zenith::Lexer.lex(text)
+rescue RLTK::LexingError => e
+  puts e.to_s
+end

@@ -1,0 +1,24 @@
+module ascii
+use io
+
+fn star:
+  '*' io.printc;
+
+fn spaces(n ->):
+  [' ' io.printc] times;
+
+fn margin:
+  30 spaces;
+
+fn blip:
+  margin star io.nl;
+
+fn stars(n ->):
+  [star] times;
+
+fn bar:
+  margin 5 stars io.nl;
+
+fn F:
+  bar blip bar blip blip;
+

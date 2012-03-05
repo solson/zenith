@@ -18,6 +18,11 @@ module Zenith
     rule(/{/) { :LBRACE }
     rule(/}/) { :RBRACE }
 
+    # TODO: char and string parsing
+    rule(/'.'/) { |t| [:CHAR, t] }
+    rule(/".+"/) { |t| [:STRING, t] }
+
+    # TODO: number and identifier parsing
     rule(/[0-9]+/) { |t| [:INT, t.to_i] }
     rule(/[a-zA-Z*>.-]+/) { |t| [:IDENT, t] }
 
