@@ -1,0 +1,7 @@
+module strings
+use io.*
+
+fn hello: 
+  "Hello, world!\nThis is \"zenith\" talking! # Not a comment" println;
+
+# vim: set sw=2:

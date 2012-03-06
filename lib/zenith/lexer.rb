@@ -19,8 +19,11 @@ module Zenith
     rule(/}/) { :RBRACE }
 
     # TODO: char and string parsing
-    rule(/'.'/) { |t| [:CHAR, t] }
-    rule(/".+"/) { |t| [:STRING, t] }
+    rule(/'.'/)          { |t| [:CHAR, t[1]] }
+    rule(/"/)            { push_state(:string); @str = ""; nil }
+    rule(/\\"/, :string) { @str << '"'; nil }
+    rule(/"/,   :string) { pop_state; [:STRING, @str] }
+    rule(/./,   :string) { |t| @str << t; nil }
 
     # TODO: number and identifier parsing
     rule(/[0-9]+/) { |t| [:INT, t.to_i] }
