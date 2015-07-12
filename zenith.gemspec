@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name        = "zenith"
   s.version     = "0.0.0.pre"
   s.authors     = ["Scott Olson"]
-  s.email       = "scott@scott-olson.org"
+  s.email       = "scott@solson.me"
   s.homepage    = "https://github.com/tsion/zenith"
   s.summary     = %q{An LLVM-compiled stack-based language}
   s.description = s.summary
